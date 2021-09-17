@@ -1,0 +1,26 @@
+[{
+    "heading" : "Areas of Strength",
+    "dataSet" : [{
+        "name" : "Lorem ipsum dolor sit amed",
+        "attention" : "Average"
+    },{
+        "name" : "Lorem ipsum dolor sit amed",
+    "attention" : "Advanced"
+    },{
+        "name" : "Lorem ipsum dolor sit amed",
+    "attention" : "Above Average"
+    }]
+    
+},{
+    "heading" : "Areas of Improvement",
+    "dataSet" : [{
+        "name" : "Lorem ipsum dolor sit amed",
+        "attention" : "Average"
+    },{
+        "name" : "Lorem ipsum dolor sit amed",
+    "attention" : "Attention"
+    },{
+        "name" : "Lorem ipsum dolor sit amed",
+    "attention" : "Need Attention"
+    }]
+}]
