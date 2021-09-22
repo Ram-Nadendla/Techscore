@@ -11,9 +11,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 //import Footer from '../Components/Footer';
 import { makeStyles } from '@material-ui/core/styles';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import FeedbackIcon from '@mui/icons-material/Feedback';
 const useStyles = makeStyles(() => ({
     appBar: {
-      backgroundColor : "#e8dfdf17"
+      backgroundColor : "#FFFBF6",
+      maxHeight : '64px'
     }
   }));
 function Navbar() {
@@ -37,13 +40,13 @@ function Navbar() {
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
-                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Tech Score
+                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }} style = {{fontSize: '34px',fontWeight: 'bold'}}>
+                        techscore
                     </Typography>
                     <nav>
-                        <Button variant="text" onClick={handleClickOpen}>Give Feedback</Button>
-                        <Button variant="text" onClick={handleClickOpen}>Invite a Friend</Button>
-                        <Button variant="text" endIcon={<LogoutIcon />} onClick={handleClickOpen}>Log Out</Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px'}} endIcon = {<FeedbackIcon/>} onClick={handleClickOpen}>Give Feedback</Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px'}} endIcon = {<MailOutlineIcon/>} onClick={handleClickOpen}>Invite a Friend</Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px'}} endIcon={<LogoutIcon />} onClick={handleClickOpen}>Log Out</Button>
                     </nav>
                 </Toolbar>
             </AppBar>

@@ -7,6 +7,9 @@ import Footer from './Components/Footer';
 ReactDOM.render(
   <React.StrictMode>
     <NavBar/>
+    <div className= 'welcomeText'>
+        Welcome back, Ram
+      </div>
     <Main/>
   <Footer/>
   </React.StrictMode>,

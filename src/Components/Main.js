@@ -17,29 +17,34 @@ const useStyles = makeStyles((theme) => ({
     flexDirection:'row'
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
     textAlign: 'left',
     color: theme.palette.text.secondary,
     backgroundColor: '#F8F8F8'
   },
   headerTitle : {
     color: '#1789FC',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: '36px',
+    fontFamily: 'revert'
   },
   headerSubTitle : {
     color: '#1789FC',
-    fontWeight: 400
+    fontWeight: 400,
+    fontSize: '26px',
+    opacity: 0.8,
+    fontFamily: 'revert'
   },
   
   leftContainerCls :{
     width: '30%',
-    fontFamily: 'arial',
+    // fontFamily: 'arial',
     height: 'auto',
     borderRadius: '10px',
     display: 'inline-block'
   },
   rightContainerCls :{
-    width: '70%',
+    width: '68%',
     height: 'auto',
     display: 'inline-block',
     marginLeft: '30px'
@@ -54,6 +59,7 @@ function ResponsiveDrawer(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+     
       <div className={classes.leftContainerCls}>
       <Profile />
       <Progress />
@@ -65,7 +71,7 @@ function ResponsiveDrawer(props) {
               <Grid item xs={12}>
                 <Paper className={classes.paper} elevation={3}>
                   <Typography gutterBottom variant="h5" component="div" className = {classes.headerTitle}>Congratulations! Your hardwork paid off.
-                  <CheckCircleOutlineIcon className={classes.iconCls}/>
+                  <CheckCircleOutlineIcon sx={{ fontSize: 65,color :'#1789FC',float: 'right'}}/>
                   </Typography>
                   <Typography gutterBottom variant="h5" component="div" className = {classes.headerTitle}>You're ready take your carrer to the next level.</Typography>
                   <Typography variant="body2" color="text.secondary" className = {classes.headerSubTitle}>Learn additional tips and advice to take your professional career to the next chapter.</Typography>

@@ -31,18 +31,21 @@ const classes = useStyles();
                 elevation={0}
                 sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
             >
-                <Toolbar sx={{ flexWrap: 'wrap' }}>
-                   <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                <Toolbar>
+                  
+                   {/* <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
                         About
-                    </Typography>      
+                    </Typography>       */}
                     <nav>
-                        <Button variant="text" onClick={handleClickOpen}>FAQ</Button>
-                        <Button variant="text" onClick={handleClickOpen}>Terms & Conditions | </Button>
-                        <Button variant="text" onClick={handleClickOpen}>Privacy Policies</Button>
-                        {/* <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        @2021 Your Tech Sore
-                    </Typography> */}
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px'}} onClick={handleClickOpen}>About US</Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px'}} onClick={handleClickOpen}>FAQ</Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px',textAlign : 'end'}} onClick={handleClickOpen}>Terms & Conditions </Button>
+                        <Button variant="text" style ={{fontSize: '18px',fontWeight: 'bold',padding : '20px',textAlign : 'end'}} onClick={handleClickOpen}>Privacy Policies</Button>
+                        
                     </nav>
+                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }} style={{textAlign: 'end',color: '#1789fc',fontSize: '18px',fontWeight: 'bold'}}>
+                        @2021 Your Tech Sore
+                    </Typography>
                 </Toolbar>
             </AppBar>
                     <Dialog

@@ -7,30 +7,47 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Typography from '@mui/material/Typography';
 const useStyles = makeStyles((theme) => ({
   paper: {
-    padding : '16px',
-    backgroundColor: "#FFFBF6",
-    fontSize: '16px',
-    fontFamily: 'inherit',
-    lineHeight : '20px',
-    border : '4px solid white'
+    backgroundColor: "#FFFAF5",
+    border: '4px solid white',
+    padding: '20px'
   },
-  span : {
+  span: {
     color: 'orange',
-    fontSize: '16px',
-    fontWeight: 700
+    fontSize: '22px',
+    fontFamily: 'revert',
+    fontWeight: 'bold'
   },
-  headerTitle : {
-    marginTop: '0.35em'
+  headerTitle: {
+    fontSize: '34px',
+    fontWeight: 'bold',
+    fontFamily: 'revert',
+    margin: '14px'
+  },
+  headerSubTitle: {
+    fontSize: '28px',
+    fontWeight: 400,
+    fontFamily: 'revert',
+    opacity: 0.8,
+    margin: '14px'
+  },
+  headerSection: {
+    fontSize: '24px',
+    fontFamily: 'revert',
+    fontWeight: 'bold'
+  },
+  sectionContent: {
+    fontSize: '22px',
+    fontFamily: 'emoji',
+    fontWeight: 500
   }
 }));
 
 export default function Selections() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -40,25 +57,21 @@ export default function Selections() {
   };
   return (
     <div className={classes.root}>
-      <Typography gutterBottom variant="h5" component="div" className = {classes.headerTitle}>
-          Following sections determine your comprehensive carrer score
-          <Typography variant="body2" color="text.secondary" className = {classes.headerTitle}>
-            To get an acurate score, ensure all foure sections has be completed.Retake if necessary
-            </Typography>
-        </Typography>
-      <Grid container spacing={3}>
-        {SelectionData.map((post) => (
-            <Grid item xs={12} sm={6}>
-              <Paper variant="outlined" square className={classes.paper}>
-                <div>{post.name} <span className={classes.span}>{": Last Updated  "}{post.date}</span></div>
-                {post.content}
+      <div className={classes.headerTitle}>Following sections determine your comprehensive carrer score</div>
+      <div className={classes.headerSubTitle}>To get an acurate score, ensure all foure sections has be completed.Retake if necessary</div>
+      <Grid container spacing={4}>
+        {SelectionData.map((post,id) => (
+          <Grid item xs={12} sm={6} key={id}>
+            <Paper variant="outlined" square className={classes.paper}>
+              <div className={classes.headerSection}>{post.name} <span className={classes.span}>{"Last Updated  "}{post.date}</span></div>
+              <div className={classes.sectionContent}>{post.content}
                 <Button size="small" color="primary" onClick={handleClickOpen}>
-                  
                   {post.action}
                 </Button>
-              </Paper>
+              </div>
+            </Paper>
 
-            </Grid>
+          </Grid>
         ))}
       </Grid>
       <Dialog

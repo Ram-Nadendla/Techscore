@@ -1,15 +1,37 @@
 import * as React from 'react';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+//import Typography from '@mui/material/Typography';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
-
+import VideoData from '../../MetaData/ReommendedVideo.json';
 const useStyles = makeStyles((theme) => ({
   root: {
     display:"flex"
+  },
+  headerTitle: {
+    fontSize: '34px',
+    fontWeight: 'bold',
+    fontFamily: 'revert',
+    margin: '14px'
+  },
+  mainContainer : {
+    padding : '20px'
+  },
+  middleContent : {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    padding: '8px'
+  },
+  sourceContent : {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    border: 'none',
+    backgroundColor: 'white',
+    color: '#1789FC',
+    cursor: 'pointer'
   }
 }));
 export default function RecommendedVideos() {
@@ -25,22 +47,23 @@ export default function RecommendedVideos() {
   };
   return (
     <div>
-       <Typography gutterBottom variant="h5" component="div">
+       <div className={classes.headerTitle}>
          Recommended Videos
-        </Typography>
+        </div>
      <div className={classes.root}>
-    {[1,2,3,4].map(()=>(
-      <div>
+    {VideoData.map((data,i)=>(
+      <div className={classes.mainContainer} key={i}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
-        image="https://upload.wikimedia.org/wikipedia/commons/3/3f/YOUTUBE--SOCIAL-PLAY.png"
+
+        image={data.url}
     />
-        <Typography gutterBottom variant="h6" component="div">
-            How to ace your coding challenge
-        </Typography>
-        <Button size="small" onClick={handleClickOpen}>Source YouTube</Button>
+        <div className = {classes.middleContent}>
+            {data.content}
+        </div>
+        <button onClick={handleClickOpen} className={classes.sourceContent}>{data.source}</button>
       <Dialog
         open={open}
         keepMounted
